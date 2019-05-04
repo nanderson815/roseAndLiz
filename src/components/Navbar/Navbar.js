@@ -29,7 +29,7 @@ function NavBar(props) {
     const { classes } = props;
     return (
         <div className={classes.root}>
-            <AppBar className={classes.blue} position="static">
+            <AppBar className={classes.blue} position="fixed">
                 <Toolbar>
                     <Typography variant="h6" color="inherit" className={classes.grow}>
                         <p className="headerLogo">Rose & Liz</p>
