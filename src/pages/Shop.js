@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Products from './components/Products';
-import Cart from './components/Cart';
+import Products from '../components/Products';
+import Cart from '../components/Cart';
 
-class Products extends Component {
+class Shop extends Component {
   constructor() {
     super();
 
@@ -112,4 +112,4 @@ class Products extends Component {
   }
 }
 
-export default Products;
+export default Shop;
