@@ -7,6 +7,7 @@
     "@material-ui/icons": "^3.0.2",
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "16.8",
+    "react-css-modules": "^4.7.9",
     "react-dom": "16.8",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",

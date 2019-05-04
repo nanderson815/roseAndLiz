@@ -5,8 +5,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton'
 import { Link } from "react-router-dom";
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
+
+import './Navbar.css';
 
 
 const styles = {
@@ -29,11 +32,11 @@ function NavBar(props) {
             <AppBar className={classes.blue} position="static">
                 <Toolbar>
                     <Typography variant="h6" color="inherit" className={classes.grow}>
-                        Rose & Liz
-          </Typography>
-                    <Button color="inherit"> <Link to="/shop">Shop</Link></Button>
-                    <Button color="inherit"> <Link to="/">Home</Link></Button>
-                    <Button color="inherit"> <ShoppingCartOutlined /> </Button>
+                        <p className="headerLogo">Rose & Liz</p>
+                    </Typography>
+                    <Link to="/shop"> <Button color="inherit">Shop</Button></Link>
+                    <Link to="/"><Button color="inherit">Home</Button></Link>
+                    <IconButton color="inherit"> <ShoppingCartOutlined /> </IconButton>
                 </Toolbar>
             </AppBar>
         </div >
