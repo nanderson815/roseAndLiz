@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
+import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
 
 
 const styles = {
@@ -15,12 +16,9 @@ const styles = {
     grow: {
         flexGrow: 1,
     },
-    menuButton: {
-        marginLeft: -12,
-        marginRight: 20,
-    },
     blue: {
-        backgroundColor: "blue"
+        backgroundColor: "white",
+        color: "black"
     }
 };
 
@@ -31,13 +29,14 @@ function NavBar(props) {
             <AppBar className={classes.blue} position="static">
                 <Toolbar>
                     <Typography variant="h6" color="inherit" className={classes.grow}>
-                        News
+                        Rose & Liz
           </Typography>
                     <Button color="inherit"> <Link to="/shop">Shop</Link></Button>
                     <Button color="inherit"> <Link to="/">Home</Link></Button>
+                    <Button color="inherit"> <ShoppingCartOutlined /> </Button>
                 </Toolbar>
             </AppBar>
-        </div>
+        </div >
     );
 }
 
