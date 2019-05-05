@@ -1,6 +1,5 @@
 import React from 'react';
 import './Home.css';
-import Button from '@material-ui/core/Button';
 import Grid from "@material-ui/core/Grid";
 
 const Home = (props) => {
