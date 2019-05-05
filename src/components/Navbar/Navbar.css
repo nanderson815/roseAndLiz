@@ -2,3 +2,16 @@
 .headerLogo {
     font-size: 20px !important;
 }
+
+.headerLink {
+    color: white;
+    text-decoration: none;
+}
+
+.center {
+    align-items: center;
+}
+
+.headerBtn {
+    font-size: 16px;
+}

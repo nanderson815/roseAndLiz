@@ -8,35 +8,67 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton'
 import { Link } from "react-router-dom";
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
+import Grid from '@material-ui/core/Grid';
 
 import './Navbar.css';
 
 
 const styles = {
-    root: {
-        flexGrow: 1,
+    color: {
+        backgroundColor: "transparent",
+        color: "white",
+        boxShadow: "none"
     },
-    grow: {
-        flexGrow: 1,
-    },
-    blue: {
-        backgroundColor: "white",
-        color: "black"
+    scrolled: {
+        backgroundColor: "#58646D",
+        color: "white",
     }
 };
 
+
 function NavBar(props) {
     const { classes } = props;
+
+
+    let navbarClass = ''
+    if (props.isTop){
+        navbarClass = classes.color
+    } else {
+        navbarClass = classes.scrolled
+    }
+
     return (
-        <div className={classes.root}>
-            <AppBar className={classes.blue} position="fixed">
+        <div>
+            <AppBar className={navbarClass} position="fixed">
                 <Toolbar>
-                    <Typography variant="h6" color="inherit" className={classes.grow}>
-                        <p className="headerLogo">Rose & Liz</p>
-                    </Typography>
-                    <Link to="/shop"> <Button color="inherit">Shop</Button></Link>
-                    <Link to="/"><Button color="inherit">Home</Button></Link>
-                    <IconButton color="inherit"> <ShoppingCartOutlined /> </IconButton>
+                    <Grid className="center"
+                        justify="space-between"
+                        container
+                        spacing={24}
+                    >
+                        <Grid item>
+                            <Link className="headerLink" to="/shop">
+                                <Button size="large" color="inherit"><span className="headerBtn">Shop</span></Button>
+                            </Link>
+                            <Link className="headerLink" to="/about">
+                                <Button size="large" color="inherit"><span className="headerBtn">About</span></Button>
+                            </Link>
+                        </Grid>
+
+                        <Grid item>
+                            <Typography variant="h6" color="inherit">
+                                <p className="headerLogo">Rose & Liz</p>
+                            </Typography>
+                        </Grid>
+
+                        <Grid item>
+                            <Link className="headerLink" to="/">
+                                <Button size="large" color="inherit"><span className="headerBtn">Home</span></Button>
+                            </Link>
+                            <IconButton color="inherit"> <ShoppingCartOutlined /> </IconButton>
+                        </Grid>
+
+                    </Grid>
                 </Toolbar>
             </AppBar>
         </div >
