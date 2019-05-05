@@ -21,6 +21,7 @@ const styles = {
     },
     scrolled: {
         backgroundColor: "#58646D",
+        transition:"background-color 0.35s ease", 
         color: "white",
     }
 };
@@ -39,7 +40,7 @@ function NavBar(props) {
 
     return (
         <div>
-            <AppBar className={navbarClass} position="fixed">
+            <AppBar className={`${navbarClass} navBar`} position="fixed">
                 <Toolbar>
                     <Grid className="center"
                         justify="space-between"
