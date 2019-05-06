@@ -14,18 +14,18 @@ const Home = (props) => {
                     alignItems="center"
                     className="center">
 
-                    <Grid container
+                    <Grid item
                         md={6}
-                        direction="column"
-                        justify="center"
-                        alignItems="center"
                         className="center">
 
-                        <Grid item className="homeMessage">
-                            <h1 className="homeTxt">For Ladies, By Ladies (JK this was made by a dude.)</h1>
+                        <Grid item className="homeTxt">
+                            <h1 className="homeMessage">For Ladies, By Ladies</h1>
+                            <h2 className="homeMessage">Our bags cater to the modern working woman, and are designed to help her tackle all
+                                the challenges that come her way.
+                            </h2>
                         </Grid>
 
-                        <Grid item>
+                        <Grid item className="homeMessage">
                             <div className="homeBtn">
                                 <Link className="headerLink" to="/shop">
                                     <span className="homeBtnTxt">Shop Now</span>
@@ -36,6 +36,32 @@ const Home = (props) => {
 
                 </Grid>
             </header>
+
+            <section className="section">
+
+                <Grid container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                    className="center">
+
+                    <Grid item
+                        md={6}
+                        className="center">
+
+                        <Grid item className="homeMessage">
+                            <h1>Feminine & Functional</h1>
+                            <h2>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah. Blah Blah Blah Blah Blah Blah.
+                                Blah Blah Blah BlahBlah Blah 
+                                Blah Blah Blah BlahBlah Blah. 
+                            </h2>
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+
+            </section>
+
         </div>
     )
 }

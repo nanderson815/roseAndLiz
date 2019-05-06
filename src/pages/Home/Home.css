@@ -4,6 +4,10 @@
     background: url("/images/header-image.jpg");
 }
 
+.section {
+    height: 30vh;
+}
+
 .center {
     height: 100%;
 }
