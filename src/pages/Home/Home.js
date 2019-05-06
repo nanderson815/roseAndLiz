@@ -10,7 +10,7 @@ const Home = (props) => {
             <header className="header">
                 <Grid container className="center">
 
-                    <Grid item xs={12} sm={6} md={4} className="homeGrid">
+                    <Grid item xs={12} sm={6} md={4} className="homeMessage">
                         <h1 className="homeTxt">Filler Text Goes Here</h1>
 
                         <div className="homeBtn">

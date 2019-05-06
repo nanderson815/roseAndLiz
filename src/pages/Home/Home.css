@@ -16,10 +16,15 @@
     font-size: 30px;
 }
 
+.homeMessage {
+    text-align: center;
+}
+
 .homeBtn {
     border: solid 2px white;
     padding: 20px;
     width: 185px;
+    display: inline-block;
 }
 
 .homeBtn:hover{
