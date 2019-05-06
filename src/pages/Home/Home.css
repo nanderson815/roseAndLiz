@@ -10,10 +10,16 @@
     height: 100%;
 }
 
+.homeTxt {
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+}
 
 .homeBtn {
     border: solid 2px white;
     padding: 20px;
+    width: 185px;
 }
 
 .homeBtn:hover{
