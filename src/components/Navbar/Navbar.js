@@ -48,10 +48,10 @@ function NavBar(props) {
                         spacing={24}
                     >
                         <Grid item>
-                            <Link className="headerLink" to="/shop">
+                            <Link className="headerLink" to="/shop" onClick={props.close}>
                                 <Button size="large" color="inherit"><span className="headerBtn">Shop</span></Button>
                             </Link>
-                            <Link className="headerLink" to="/about">
+                            <Link className="headerLink" to="/about" onClick={props.close}>
                                 <Button size="large" color="inherit"><span className="headerBtn">About</span></Button>
                             </Link>
                         </Grid>
@@ -63,10 +63,10 @@ function NavBar(props) {
                         </Grid>
 
                         <Grid item>
-                            <Link className="headerLink" to="/">
+                            <Link className="headerLink" to="/" onClick={props.close}>
                                 <Button size="large" color="inherit"><span className="headerBtn">Home</span></Button>
                             </Link>
-                            <IconButton color="inherit"> <ShoppingCartOutlined /> </IconButton>
+                            <IconButton color="inherit" onClick={props.click}> <ShoppingCartOutlined /> </IconButton>
                         </Grid>
 
                     </Grid>

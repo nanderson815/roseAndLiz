@@ -2,11 +2,21 @@ import React from 'react';
 import './Home.css';
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
+import Products from "../../components/Products";
+import Cart from '../../components/Cart/Cart'
+
 
 
 const Home = (props) => {
     return (
         <div>
+            <Cart
+                checkout={props.checkout}
+                isCartOpen={props.isCartOpen}
+                handleCartClose={props.handleCartClose}
+                updateQuantityInCart={props.updateQuantityInCart}
+                removeLineItemInCart={props.removeLineItemInCart}
+            />
             <header className="header">
                 <Grid container
                     direction="column"
@@ -19,9 +29,9 @@ const Home = (props) => {
                         className="center">
 
                         <Grid item className="homeTxt">
-                            <h1 className="homeMessage">For Ladies, By Ladies</h1>
-                            <h2 className="homeMessage">Our bags cater to the modern working woman, and are designed to help her tackle all
-                                the challenges that come her way.
+                            <h1 className="homeMessage">Pretty enough for a lunch date. </h1>
+                            <h1 className="homeMessage"> Practical enough for a board meeting.</h1>
+                            <h2 className="homeMessage">
                             </h2>
                         </Grid>
 
@@ -50,11 +60,9 @@ const Home = (props) => {
                         className="center">
 
                         <Grid item className="homeMessage">
-                            <h1>Feminine & Functional</h1>
-                            <h2>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah. Blah Blah Blah Blah Blah Blah.
-                                Blah Blah Blah BlahBlah Blah 
-                                Blah Blah Blah BlahBlah Blah. 
-                            </h2>
+                            <h1>Practical, Professional, Feminine.</h1>
+                            <h2>Our bags cater to the modern working woman, and are designed to help her tackle all
+                                the challenges that come her way.</h2>
                         </Grid>
                     </Grid>
 

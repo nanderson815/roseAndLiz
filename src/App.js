@@ -8,12 +8,87 @@ import Navbar from './components/Navbar/Navbar';
 
 
 class App extends Component {
-  state = {
-    isTop: true,
+  constructor() {
+    super();
 
+    this.state = {
+      isTop: true,
+      isCartOpen: false,
+      checkout: { lineItems: [] },
+      products: [],
+      shop: {}
+    };
+
+    this.handleCartClose = this.handleCartClose.bind(this);
+    this.addVariantToCart = this.addVariantToCart.bind(this);
+    this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
+    this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
   }
 
-  componentDidMount(){
+
+  componentWillMount() {
+    this.props.client.checkout.create().then((res) => {
+      this.setState({
+        checkout: res,
+      });
+    });
+
+    this.props.client.product.fetchAll().then((res) => {
+      this.setState({
+        products: res,
+      });
+    });
+
+    this.props.client.shop.fetchInfo().then((res) => {
+      this.setState({
+        shop: res,
+      });
+    });
+  }
+
+  addVariantToCart(variantId, quantity) {
+    this.setState({
+      isCartOpen: true,
+    });
+
+    const lineItemsToAdd = [{ variantId, quantity: parseInt(quantity, 10) }]
+    const checkoutId = this.state.checkout.id
+
+    return this.props.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
+      this.setState({
+        checkout: res,
+      });
+    });
+  }
+
+  updateQuantityInCart(lineItemId, quantity) {
+    const checkoutId = this.state.checkout.id
+    const lineItemsToUpdate = [{ id: lineItemId, quantity: parseInt(quantity, 10) }]
+
+    return this.props.client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
+      this.setState({
+        checkout: res,
+      });
+    });
+  }
+
+  removeLineItemInCart(lineItemId) {
+    const checkoutId = this.state.checkout.id
+
+    return this.props.client.checkout.removeLineItems(checkoutId, [lineItemId]).then(res => {
+      this.setState({
+        checkout: res,
+      });
+    });
+  }
+
+  handleCartClose() {
+    this.setState({
+      isCartOpen: false,
+    });
+  }
+
+  componentDidMount() {
     document.addEventListener('scroll', () => {
       const isTop = window.scrollY < 25;
       if (isTop !== this.state.isTop) {
@@ -25,14 +100,33 @@ class App extends Component {
   render() {
     return (
       <Router>
+
         <div>
-          <Navbar isTop={this.state.isTop}/>
-          <Route exact path="/" component={Home} />
+          <Navbar isTop={this.state.isTop} click={() => this.setState({ isCartOpen: true })} close={this.handleCartClose} />
+          <Route exact path="/"
+            render={(props) => <Home {...props}
+              checkout={this.state.checkout}
+              isCartOpen={this.state.isCartOpen}
+              handleCartClose={this.handleCartClose}
+              updateQuantityInCart={this.updateQuantityInCart}
+              removeLineItemInCart={this.removeLineItemInCart}
+            />}
+          />
           <Route
-            path='/shop'
-            render={(props) => <Shop {...props} client={this.props.client} />}
+            exact path='/shop'
+            render={(props) => <Shop {...props}
+              client={this.props.client}
+              products={this.state.products}
+              
+              checkout={this.state.checkout}
+              isCartOpen={this.state.isCartOpen}
+              handleCartClose={this.handleCartClose}
+              updateQuantityInCart={this.updateQuantityInCart}
+              removeLineItemInCart={this.removeLineItemInCart}
+            />}
           />
         </div>
+
       </Router>
     );
   }
