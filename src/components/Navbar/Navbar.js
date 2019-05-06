@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton'
 import { Link } from "react-router-dom";
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
 import Grid from '@material-ui/core/Grid';
+import Menu from './NavbarMenu';
 
 import './Navbar.css';
 
@@ -48,9 +49,10 @@ function NavBar(props) {
                         spacing={24}
                     >
                         <Grid item>
-                            <Link className="headerLink" to="/shop" onClick={props.close}>
+                            {/* <Link className="headerLink" to="/shop" onClick={props.close}>
                                 <Button size="large" color="inherit"><span className="headerBtn">Shop</span></Button>
-                            </Link>
+                            </Link> */}
+                            <Menu></Menu>
                             <Link className="headerLink" to="/about" onClick={props.close}>
                                 <Button size="large" color="inherit"><span className="headerBtn">About</span></Button>
                             </Link>

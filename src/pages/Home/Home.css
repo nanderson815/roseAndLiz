@@ -12,6 +12,10 @@
     height: 100%;
 }
 
+.mt-50{
+    margin-top: 50px !important;
+}
+
 .homeTxt {
     color: white;
     font-weight: 600;

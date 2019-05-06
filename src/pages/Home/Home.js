@@ -25,8 +25,9 @@ const Home = (props) => {
                     className="center">
 
                     <Grid item
+                        xs={8}
                         md={6}
-                        className="center">
+                        className="center mt-50">
 
                         <Grid item className="homeTxt">
                             <h1 className="homeMessage">Pretty enough for a lunch date. </h1>
@@ -56,14 +57,13 @@ const Home = (props) => {
                     className="center">
 
                     <Grid item
+                        xs={10}
                         md={6}
-                        className="center">
+                        className="center homeMessage">
 
-                        <Grid item className="homeMessage">
-                            <h1>Practical, Professional, Feminine.</h1>
-                            <h2>Our bags cater to the modern working woman, and are designed to help her tackle all
+                        <h1>Practical, Professional, Feminine.</h1>
+                        <h2>Our bags cater to the modern working woman, and are designed to help her tackle all
                                 the challenges that come her way.</h2>
-                        </Grid>
                     </Grid>
 
                 </Grid>
