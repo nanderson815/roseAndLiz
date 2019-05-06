@@ -8,17 +8,30 @@ const Home = (props) => {
     return (
         <div>
             <header className="header">
-                <Grid container className="center">
+                <Grid container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                    className="center">
 
-                    <Grid item xs={12} sm={6} md={4} className="homeMessage">
-                        <h1 className="homeTxt">Filler Text Goes Here</h1>
+                    <Grid container
+                        md={6}
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                        className="center">
 
-                        <div className="homeBtn">
-                            <Link className="headerLink" to="/shop">
-                                <span className="homeBtnTxt">Shop Now</span>
-                            </Link>
-                        </div>
+                        <Grid item className="homeMessage">
+                            <h1 className="homeTxt">For Ladies, By Ladies (JK this was made by a dude.)</h1>
+                        </Grid>
 
+                        <Grid item>
+                            <div className="homeBtn">
+                                <Link className="headerLink" to="/shop">
+                                    <span className="homeBtnTxt">Shop Now</span>
+                                </Link>
+                            </div>
+                        </Grid>
                     </Grid>
 
                 </Grid>
