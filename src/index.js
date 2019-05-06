@@ -5,8 +5,8 @@ import Client from 'shopify-buy';
 import './app.css';
 
 const client = Client.buildClient({
-  storefrontAccessToken: 'dd4d4dc146542ba7763305d71d1b3d38',
-  domain: 'graphql.myshopify.com'
+  storefrontAccessToken: '085ae53fc5ba0d66bf927ff524bf37cd',
+  domain: 'rose-and-liz.myshopify.com'
 });
 
 ReactDOM.render(

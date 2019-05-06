@@ -3,9 +3,7 @@ import Products from '../components/Products';
 import Cart from '../components/Cart/Cart';
 
 const Shop = (props) => {
-  
-
-  
+    
     return (
       <div className="App">
         <header className="App__header">
