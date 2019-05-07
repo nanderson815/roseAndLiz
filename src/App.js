@@ -117,7 +117,7 @@ class App extends Component {
             render={(props) => <Shop {...props}
               client={this.props.client}
               products={this.state.products}
-              
+              addVariantToCart={this.addVariantToCart}
               checkout={this.state.checkout}
               isCartOpen={this.state.isCartOpen}
               handleCartClose={this.handleCartClose}
