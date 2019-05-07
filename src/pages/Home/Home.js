@@ -37,11 +37,11 @@ const Home = (props) => {
                         </Grid>
 
                         <Grid item className="homeMessage">
-                            <div className="homeBtn">
-                                <Link className="headerLink" to="/shop">
+                            <Link className="headerLink" to="/shop">
+                                <div className="homeBtn">
                                     <span className="homeBtnTxt">Shop Now</span>
-                                </Link>
-                            </div>
+                                </div>
+                            </Link>
                         </Grid>
                     </Grid>
 
