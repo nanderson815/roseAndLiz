@@ -38,7 +38,7 @@ class SimpleMenu extends React.Component {
                     PaperProps={{
                         style: {
                             height: "50vh",
-                            width: "95vw",
+                            width: "100vw",
                         },
                     }}
                     onClose={this.handleClose}
