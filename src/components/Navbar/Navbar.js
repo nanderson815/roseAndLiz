@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
 import Grid from '@material-ui/core/Grid';
 import NavbarPanel from "./NavbarPanel";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import './Navbar.css';
 
@@ -49,7 +51,9 @@ function NavBar(props) {
                         spacing={24}
                     >
                         <Grid item>
-                            <Button size="large" color="inherit" onClick={props.toggle}><span className="headerBtn">Shop</span></Button>
+                            <Button size="large" color="inherit" onClick={props.toggle}>
+                                <span className="headerBtn">Shop {props.isOpen ? <ExpandLessIcon className="btnIcon" /> : <ExpandMoreIcon className="btnIcon" />}</span>
+                            </Button>
 
                             <Link className="headerLink" to="/about" onClick={props.close}>
                                 <Button size="large" color="inherit"><span className="headerBtn">About</span></Button>
