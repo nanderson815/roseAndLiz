@@ -87,6 +87,7 @@ class App extends Component {
   handleCartClose() {
     this.setState({
       isCartOpen: false,
+      isOpen: false
     });
   }
 
