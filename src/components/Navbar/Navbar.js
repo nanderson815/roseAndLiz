@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton'
 import { Link } from "react-router-dom";
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
 import Grid from '@material-ui/core/Grid';
-import Menu from './NavbarMenu';
+import NavbarPanel from "./NavbarPanel";
 
 import './Navbar.css';
 
@@ -22,7 +22,7 @@ const styles = {
     },
     scrolled: {
         backgroundColor: "#58646D",
-        transition:"background-color 0.35s ease", 
+        transition: "background-color 0.35s ease",
         color: "white",
     }
 };
@@ -33,7 +33,7 @@ function NavBar(props) {
 
 
     let navbarClass = ''
-    if (props.isTop){
+    if (props.isTop) {
         navbarClass = classes.color
     } else {
         navbarClass = classes.scrolled
@@ -49,10 +49,8 @@ function NavBar(props) {
                         spacing={24}
                     >
                         <Grid item>
-                            {/* <Link className="headerLink" to="/shop" onClick={props.close}>
-                                <Button size="large" color="inherit"><span className="headerBtn">Shop</span></Button>
-                            </Link> */}
-                            <Menu></Menu>
+                            <Button size="large" color="inherit" onClick={props.toggle}><span className="headerBtn">Shop</span></Button>
+
                             <Link className="headerLink" to="/about" onClick={props.close}>
                                 <Button size="large" color="inherit"><span className="headerBtn">About</span></Button>
                             </Link>
@@ -73,6 +71,7 @@ function NavBar(props) {
 
                     </Grid>
                 </Toolbar>
+                <NavbarPanel isOpen={props.isOpen} />
             </AppBar>
         </div >
     );

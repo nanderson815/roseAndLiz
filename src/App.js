@@ -13,6 +13,7 @@ class App extends Component {
 
     this.state = {
       isTop: true,
+      isOpen: false,
       isCartOpen: false,
       checkout: { lineItems: [] },
       products: [],
@@ -23,6 +24,7 @@ class App extends Component {
     this.addVariantToCart = this.addVariantToCart.bind(this);
     this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
     this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
+    this.toggleNavbarPanel = this.toggleNavbarPanel.bind(this);
   }
 
 
@@ -88,6 +90,13 @@ class App extends Component {
     });
   }
 
+  toggleNavbarPanel() {
+    const isOpen = !this.state.isOpen;
+    this.setState({
+      isOpen: isOpen
+    });
+  }
+
   componentDidMount() {
     document.addEventListener('scroll', () => {
       const isTop = window.scrollY < 25;
@@ -102,7 +111,13 @@ class App extends Component {
       <Router>
 
         <div>
-          <Navbar isTop={this.state.isTop} click={() => this.setState({ isCartOpen: true })} close={this.handleCartClose} />
+          <Navbar 
+          isTop={this.state.isTop} 
+          isOpen={this.state.isOpen} 
+          click={() => this.setState({ isCartOpen: true })} 
+          toggle={this.toggleNavbarPanel}
+          close={this.handleCartClose} />
+
           <Route exact path="/"
             render={(props) => <Home {...props}
               checkout={this.state.checkout}
