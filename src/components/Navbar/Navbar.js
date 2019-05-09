@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton'
 import { Link } from "react-router-dom";
@@ -26,6 +25,12 @@ const styles = {
         backgroundColor: "#58646D",
         transition: "background-color 0.35s ease",
         color: "white",
+    },
+    center: {
+        textAlign: "center"
+    },
+    inline: {
+        display: "inline-block"
     }
 };
 
@@ -45,12 +50,14 @@ function NavBar(props) {
         <div>
             <AppBar className={`${navbarClass} navBar`} position="fixed">
                 <Toolbar>
-                    <Grid className="center"
-                        justify="space-between"
+                    <Grid
+                        justify="space-around"
+                        alignItems="center"
+                        direction="row"
                         container
                         spacing={24}
                     >
-                        <Grid item>
+                        <Grid item md className={classes.center}>
                             <Button size="large" color="inherit" onClick={props.toggle}>
                                 <span className="headerBtn">Shop {props.isOpen ? <ExpandLessIcon className="btnIcon" /> : <ExpandMoreIcon className="btnIcon" />}</span>
                             </Button>
@@ -60,13 +67,11 @@ function NavBar(props) {
                             </Link>
                         </Grid>
 
-                        <Grid item>
-                            <Typography variant="h6" color="inherit">
-                                <img className="headerLogo" src="./images/r6.png" alt="Rose and Liz Logo"/>
-                            </Typography>
+                        <Grid item md className={classes.center}>
+                            <img className={`${classes.inline} headerLogo`} src="./images/r6.png" alt="Rose and Liz Logo" />
                         </Grid>
 
-                        <Grid item>
+                        <Grid item md className={classes.center}>
                             <Link className="headerLink" to="/" onClick={props.close}>
                                 <Button size="large" color="inherit"><span className="headerBtn">Home</span></Button>
                             </Link>
@@ -75,7 +80,7 @@ function NavBar(props) {
 
                     </Grid>
                 </Toolbar>
-                <NavbarPanel isOpen={props.isOpen} products={props.products}/>
+                <NavbarPanel isOpen={props.isOpen} products={props.products} />
             </AppBar>
         </div >
     );

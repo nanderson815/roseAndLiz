@@ -31,8 +31,10 @@ function NavbarPanel(props) {
             <div className={classes.root}>
                 <Grid className={classes.cont} container spacing={24}>
                     <Grid item md={3} >
-                        <h2 className={classes.text}>{product ? product.title : null}</h2>
+                        <h1 className={classes.text}>Featured</h1>
                         <img src={product ? product.images[0].src : null} alt={product ? product.title : null} />
+                        <h2 className={classes.text}>{product ? product.title : null}</h2>
+
 
                     </Grid>
                 </Grid>
