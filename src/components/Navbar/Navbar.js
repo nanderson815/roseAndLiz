@@ -62,7 +62,7 @@ function NavBar(props) {
 
                         <Grid item>
                             <Typography variant="h6" color="inherit">
-                                <p className="headerLogo">Rose & Liz</p>
+                                <img className="headerLogo" src="./images/r6.png" alt="Rose and Liz Logo"/>
                             </Typography>
                         </Grid>
 
@@ -75,7 +75,7 @@ function NavBar(props) {
 
                     </Grid>
                 </Toolbar>
-                <NavbarPanel isOpen={props.isOpen} />
+                <NavbarPanel isOpen={props.isOpen} products={props.products}/>
             </AppBar>
         </div >
     );

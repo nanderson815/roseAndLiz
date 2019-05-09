@@ -112,12 +112,14 @@ class App extends Component {
       <Router>
 
         <div>
-          <Navbar 
-          isTop={this.state.isTop} 
-          isOpen={this.state.isOpen} 
-          click={() => this.setState({ isCartOpen: true })} 
-          toggle={this.toggleNavbarPanel}
-          close={this.handleCartClose} />
+          <Navbar
+            isTop={this.state.isTop}
+            isOpen={this.state.isOpen}
+            click={() => this.setState({ isCartOpen: true })}
+            toggle={this.toggleNavbarPanel}
+            close={this.handleCartClose}
+            products={this.state.products}
+          />
 
           <Route exact path="/"
             render={(props) => <Home {...props}

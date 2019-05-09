@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Collapse from '@material-ui/core/Collapse';
+import Grid from '@material-ui/core/Grid';
 
 
 const styles = theme => ({
@@ -10,18 +11,31 @@ const styles = theme => ({
         minHeight: "200px",
         backgroundColor: "#f1f2f3"
     },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        fontWeight: theme.typography.fontWeightRegular,
+    text: {
+        color: "black",
+        textAlign: "center"
     },
+    cont: {
+        margin: "0"
+    }
 });
 
 function NavbarPanel(props) {
     const { classes } = props;
+
+    const product = props.products[0];
+    console.log(product ? product.title : false);
+
     return (
         <Collapse in={props.isOpen} >
             <div className={classes.root}>
+                <Grid className={classes.cont} container spacing={24}>
+                    <Grid item md={3} >
+                        <h2 className={classes.text}>{product ? product.title : null}</h2>
+                        <img src={product ? product.images[0].src : null} alt={product ? product.title : null} />
 
+                    </Grid>
+                </Grid>
             </div>
         </Collapse>
     );

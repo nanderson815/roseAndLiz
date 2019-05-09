@@ -22,6 +22,14 @@
     font-size: 16px;
 }
 
+.headerLogo {
+    width: 125px;
+    height: auto;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    margin: 9px 0 9px 0;
+}
+
 .btnIcon {
     font-size: 22px !important;
     vertical-align: middle;
